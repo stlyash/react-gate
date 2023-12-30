@@ -1,38 +1,67 @@
+* {
+  margin: 0;
+}
+.login-page{
+  height:auto;
+}
 .App {
+  margin: 0;
+  padding: 0;
   text-align: center;
+  overflow-x: hidden;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.row-grid{
+  border: 1px solid rgb(108, 107, 107);
+  border-radius: 0.1cm;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.lock-img{
+  height:1.5rem;
+  opacity:0.5;
+  border-radius:0.3rem;
+  margin:0;
+  padding:0;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+input{
+  margin:0;
+  border:none;
+  border-left: 1px solid rgb(108, 107, 107);
+  border-right: 1px solid rgb(108, 107, 107);
+  height: 1cm;
 }
-
-.App-link {
-  color: #61dafb;
+.form-select{
+  width:90%;
+  margin: 0.5rem 1rem 0rem 1rem;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sub-nav{
+  border: 1px solid rgb(108, 107, 107);
+}
+.gate-text{
+  color:rgb(9, 9, 69);
+}
+.login-nav{
+  background-color: rgb(108, 107, 107);
+}
+.whit{
+  color:white;
+}
+.yell{
+  color:yellow;
+}
+.placeholder-img{
+  width:70%;
+  margin-top:5%;
+  border:solid 1px black;
+}
+.loginform{
+  display: grid;
+  place-items: center;
+}
+.card{
+  max-width: 30vw;
+}
+.login-label{
+  padding:3px;
+  padding-left:1rem;
+  margin:0;
+  background-color: rgb(225, 225, 225);
 }
