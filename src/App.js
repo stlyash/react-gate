@@ -1,19 +1,22 @@
-import GateBanner from './GateBanner.js'
+import Instructions from './Instructions1.js'
 import LoginPage from './LoginPage.js'
 import './App.css';
+
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
+  Routes,
+  Route,
 } from "react-router-dom";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <GateBanner />
-        <LoginPage />
-      </div>
-    </Router>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/instructions" element={<Instructions />} />
+        {/* <Route path="/exam" element={<Exam />} /> */}
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
+export default App

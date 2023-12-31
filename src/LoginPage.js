@@ -1,12 +1,15 @@
 import React from 'react'
+import GateBanner from './GateBanner.js'
 import PropTypes from 'prop-types'
 import placeholder from './assets/placeholder.jpg'
 import kbrd from './assets/keyboard.png'
 import lock from './assets/lock.png'
 import user from './assets/user.png'
-
+import {Link} from "react-router-dom";
 const LoginPage = props => {
   return (
+    <>
+    <GateBanner />
     <div className='login-page'>
         <div className="m-0 p-0">
         <div className="sub-nav row m-0 p-0 align-middle">
@@ -31,64 +34,43 @@ const LoginPage = props => {
                     </div>
                     <div className="row m-3 align-items-center text-center row-grid">
                         <div className="col-2">
-                        <img src={user} className='lock-img' alt='lock image'/>
+                        <img src={user} className='lock-img' alt='lock'/>
                         </div>
                         <div className="col-8">
-                            <input type="text" />
+                            <input placeholder='Type Anything' type="text" />
                         </div>
                         <div className="col-2">
-                         <img src={kbrd} alt='keyboard image'/>
+                         <img src={kbrd} alt='keyboard'/>
                         </div>
                     </div>
                     <div className="row m-3 align-items-center text-center row-grid">
                         <div className="col-2">
-                        <img src={lock} className='lock-img' alt='lock image'/>
+                        <img src={lock} className='lock-img' alt='lock'/>
                         </div>
                         <div className="col-8">
-                            <input type="password" />
+                            <input placeholder='Type Anything' type="password" />
                         </div>
                         <div className="col-2">
-                        <img src={kbrd} alt='keyboard image'/>
+                        <img src={kbrd} alt='keyboard'/>
                         </div>
                     </div>
 
                     <select class="form-select form-select-sm">
-                        <option selected>-Subject-</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                        <option value="3">Three</option>
-                        <option value="3">Three</option>
-                        <option value="3">Three</option>
-                        <option value="3">Three</option>
-                        <option value="3">Three</option>
-                        <option value="3">Three</option>
-                        <option value="3">Three</option>
-                        <option value="3">Three</option>
-                        <option value="3">Three</option>
-                        <option value="3">Three</option>
-                        <option value="3">Three</option>
-                        <option value="3">Three</option>
-                        <option value="3">Three</option>
-                        <option value="3">Three</option>
-                        <option value="3">Three</option>
-                        <option value="3">Three</option>
-                        <option value="3">Three</option>
-                        <option value="3">Three</option>
+                        <option selected>-Subject---This option will not be in GATE</option>
+                        <option value="1">CS</option>
                     </select>
 
                     <select class="form-select form-select-sm">
-                        <option selected>-Year-</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option selected>-Year-------This option will not be in GATE</option>
+                        <option value="1">2023</option>
                     </select>
 
-                    <button className='m-3 btn btn-primary'>Sign In</button>
+                    <Link to="/instructions"><button className='m-3 btn btn-primary sign-btn'>Sign In</button></Link>
                 </div>
         </div>
         </div>
         </div>
+        </>
   )
 }
 
