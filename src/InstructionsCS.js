@@ -3,12 +3,11 @@ import up from './assets/Up.png'
 import down from './assets/Down.png'
 import qstatus from './assets/qstatus.png'
 
-const InstructionsCS = () => {
+const InstructionsCS = (props) => {
   return (
-    <>
-        <div className='instruction-label'>Other Important Instructions</div>
-
-        <div className='instruction-text'>
+    props.pg && <>
+        <div className='instruction-label' style={{transform:"translateY(-3.7vh)"}}>Other Important Instructions</div>
+        <div style={{height:"55vh",transform:"translateY(-3.7vh)"}} className='instruction-text'>
             <b><div className='instruction-head text-center pb-0'>CS Paper specific instructions for online exam</div></b>
             <u><b><div className='instruction-head text-center p-0 m-0'>Please Read the Instructions Carefully (for Candidates)</div></b></u>
 

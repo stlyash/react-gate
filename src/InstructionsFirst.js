@@ -3,12 +3,11 @@ import up from './assets/Up.png'
 import down from './assets/Down.png'
 import qstatus from './assets/qstatus.png'
 
-const InstructionsFirst = () => {
+const InstructionsFirst = (props) => {
   return (
-    <>
+    props.pg && <>
         <div className='instruction-label'>Instructions</div>
-
-        <div className='instruction-text'>
+        <div className='instruction-text'  style={{height:"72vh"}}>
             <div className='instruction-head text-center'>Read the following instructions carefully</div>
             <ol className='inlist1'>
             <div className='instruction-subhead'>General Instructions:</div>

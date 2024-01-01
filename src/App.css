@@ -120,19 +120,32 @@ input{
   padding:0.65in;
 }
 
-.instruction-footer>button{
+.prevnex{
   height:1.5cm;
   width:3cm;
   background-color: white;
-  margin:2%;
+  margin:1.5%;
+  margin-left:3%;
   border:1px solid rgb(218, 217, 217);
   font-weight: 600;
 }
 
-.instruction-footer>button:hover{
+.prevnex:hover{
   background-color: #0C7CD5;
   border:1px solid #000000;
   color:white;
+}
+.ready{
+  background-color: #38aae9;
+  color: white;
+  padding:0.2cm;
+  padding-right:1cm;
+  padding-left:1cm;
+  border:none;
+  margin-left:25%;
+}
+.ready:hover{
+  background-color: #257dc5;
 }
 .sign-btn{
   width:90%;
