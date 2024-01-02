@@ -1,3 +1,10 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8d49a073-b5e5-456b-9f0d-3dce150391d3/deploy-status)](https://app.netlify.com/sites/reactgate/deploys)
+
+You can visit the deployed site using <a href = 'https://reactgate.netlify.app/' target = '_blank'>this</a> Link.
+
+
+# The Mock Gate Using React
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
