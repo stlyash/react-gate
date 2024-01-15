@@ -7,6 +7,7 @@ import infoIcon from './assets/infoButton.png'
 import calc from './assets/calct7.png'
 import { useEffect, useState } from 'react'
 import qj from './assets/2022/cs/cs2022details.json'
+import InstructionsFirst from './InstructionsFirst.js'
 
 const Exam = props => {
     const initialCountdown = 180 * 60; // 180 minutes converted to seconds
@@ -60,14 +61,56 @@ const Exam = props => {
         <div className='row sub-banner'>
             <div className='col-6 subanner-heading'>CS 2 Computer Science Information Technology</div>
             <div className='col-6 text-end'>
-                <div style={{display:'inline'}} className='subanner-question'>
+                <div style={{display:'inline'}} className='subanner-question' data-bs-toggle="modal" data-bs-target="#staticBackdrop0">
                     <img src={question} alt='question paper' />
                     Question Paper</div>
-                <div style={{display:'inline'}} className='subanner-instruction'>
-                    
+                <div style={{display:'inline'}} className='subanner-instruction' data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <img className='calc-info' src={infoIcon} alt='info icon' />
                     View Instructions</div>
             </div>
         </div>
+        <div class="modal fade" id="staticBackdrop0" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="staticBackdropLabel">Question Paper</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                  <iframe src="https://drive.google.com/file/d/17nmrLNezouGzFGNr3ddjCmHU_1AgfXan/preview" width="100%" height="480rem" allow="autoplay"></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="staticBackdropLabel">Instructions</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                  <InstructionsFirst pg = {1}/>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal fade" id="calcmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog draggable">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="staticBackdropLabel">Calculator</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                  <iframe src="https://www.tcsion.com/OnlineAssessment/ScientificCalculator/Calculator.html" width="101%" height="350rem"></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
         <div className='exam-body'>
           <div className='exam-main'>
             <div className='exam-calculator row pt-2 m-0'>
@@ -80,7 +123,7 @@ const Exam = props => {
               <div className='col-6 calcp text-end'>
                 <div className='indiv calc-r-arrow'>&#x25B6;</div>
                 <div className='indiv'>
-                  <img style={{height:'0.65cm'}} src={calc} alt='calculator' />
+                  <button style={{border:'none'}} data-bs-toggle="modal" data-bs-target="#calcmodal"><img style={{height:'0.65cm'}} src={calc} alt='calculator' /></button>
                 </div>
               </div>
             </div>
@@ -103,8 +146,8 @@ const Exam = props => {
               <div className='indiv'>Question Type: {(qdata?.[qindex]?.type || 'Unknown').toUpperCase()}</div>
             </div>
             <div className='col-6 text-end qmarks'>
-              <div className='indiv'>Marks for Correct Answer: <span style={{color:'green'}}>{(qdata?.[qindex]?.mar || 'Unknown')}</span> </div>
-              <div className='indiv' style={{paddingRight:'0.4cm'}}>| Negative Marks: <span style={{color:'red'}}>{(qdata?.[qindex]?.type || 'Unknown')[1]==='c'?((qdata?.[qindex]?.mar || 0).toString()+"/3 "):0}</span></div>
+              <div className='indiv'>Marks for Correct Answer: <span style={{color:'#10de43',fontSize:'0.9rem'}}>{(qdata?.[qindex]?.mar || 'Unknown')}</span> </div>
+              <div className='indiv' style={{paddingRight:'0.4cm'}}>| Negative Marks: <span style={{color:'red',fontSize:'0.9rem'}}>{(qdata?.[qindex]?.type || 'Unknown')[1]==='c'?((qdata?.[qindex]?.mar || 0).toString()+"/3 "):0}</span></div>
             </div>
             
             
@@ -128,6 +171,7 @@ const Exam = props => {
             <div className='indiv'>Student Name</div>
           </div>
         </div>
+
     </div>
   )
 }

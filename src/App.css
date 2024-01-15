@@ -187,6 +187,10 @@ li{
   font-weight: 600;
   padding-left:0.2cm;
 }
+.subanner-question:hover,.subanner-instruction:hover{
+  text-decoration: underline;
+  cursor:pointer;
+}
 .subanner-instruction>img, .subanner-question>img{
   height:1.1rem;
   padding-right:0.2rem;
