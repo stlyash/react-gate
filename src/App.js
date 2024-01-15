@@ -13,9 +13,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route path="/" element={<LoginPage />} />
-        <Route path="/instructions" element={<Instructions />} /> */}
-        <Route path="/" element={<Exam />} />
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/instructions" element={<Instructions />} />
+        <Route path="/exam" element={<Exam />} />
       </Routes>
     </BrowserRouter>
   );

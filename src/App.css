@@ -192,19 +192,42 @@ li{
   padding-right:0.2rem;
   padding-left:0.5rem;
 }
-
+.calc-info{
+  height:1.1rem;
+}
 .exam-main{
   border-right:1px solid rgb(184, 183, 183);
   width: 81%;
 }
 
 .exam-calculator{
-  background-color: rgb(224, 223, 223);
+  background-color: rgb(242, 240, 240);
   height:1.3cm;
   padding-left:0.2cm;
 }
+.calcp{
+  justify-items: center;
+}
+.calc-r-arrow{
+  margin-right:0.6cm;
+  color: rgb(186, 184, 184);
+}
+.calc-r-arrow2{
+  color: rgb(186, 184, 184);
+}
+.calc-l-arrow{
+  margin-right:0.2cm;
+  color: rgb(186, 184, 184);
+}
 .indiv{
   display: inline;
+}
+.qtype{
+  font-size: 0.9rem;
+  font-weight: 660;
+}
+.qmarks{
+  font-size: 0.76rem;
 }
 .exam-time{
   height:0.6cm;
@@ -213,6 +236,7 @@ li{
 .exam-section{
   height:1.1cm;
   padding-left:0.2cm;
+  width: 101%;
 }
 .exam-type{
   height:0.9cm;
@@ -239,4 +263,10 @@ li{
   overflow-y:scroll;
  height:calc(100vh - 8.8cm);  
  padding-left:0.2cm;
+}
+
+
+.secsec{
+  font-size:0.85rem;
+  font-weight:700;
 }

@@ -1,0 +1,457 @@
+[
+    {
+        "ques": 1,
+        "sec": "ga",
+        "type": "mcq",
+        "mar": 1,
+        "ans":"d"
+    },
+    {
+        "ques": 2,
+        "sec": "ga",
+        "type": "mcq",
+        "mar": 1,
+        "ans":"c"
+    },
+    {
+        "ques": 3,
+        "sec": "ga",
+        "type": "mcq",
+        "mar": 1,
+        "ans":"d"
+    },
+    {
+        "ques": 4,
+        "sec": "ga",
+        "type": "mcq",
+        "mar": 1,
+        "ans":"a"
+    },
+    {
+        "ques": 5,
+        "sec": "ga",
+        "type": "mcq",
+        "mar": 1,
+        "ans":"b"
+    },
+    {
+        "ques": 6,
+        "sec": "ga",
+        "type": "mcq",
+        "mar": 2,
+        "ans":"b"
+    },
+    {
+        "ques": 7,
+        "sec": "ga",
+        "type": "mcq",
+        "mar": 2,
+        "ans":"d"
+    },
+    {
+        "ques": 8,
+        "sec": "ga",
+        "type": "mcq",
+        "mar": 2,
+        "ans":"d"
+    },
+    {
+        "ques": 9,
+        "sec": "ga",
+        "type": "mcq",
+        "mar": 2,
+        "ans":"b"
+    },
+    {
+        "ques": 10,
+        "sec": "ga",
+        "type": "mcq",
+        "mar": 2,
+        "ans":"d"
+    },
+    {
+        "ques": 11,
+        "sec": "cs",
+        "type": "mcq",
+        "mar": 1,
+        "ans":"a"
+    },
+    {
+        "ques": 12,
+        "sec": "cs",
+        "type": "mcq",
+        "mar": 1,
+        "ans":"d"
+    },
+    {
+        "ques": 13,
+        "sec": "cs",
+        "type": "mcq",
+        "mar": 1,
+        "ans":"d"
+    },
+    {
+        "ques": 14,
+        "sec": "cs",
+        "type": "mcq",
+        "mar": 1,
+        "ans":"a"
+    },
+    {
+        "ques": 15,
+        "sec": "cs",
+        "type": "mcq",
+        "mar": 1,
+        "ans":"a"
+    },
+    {
+        "ques": 16,
+        "sec": "cs",
+        "type": "mcq",
+        "mar": 1,
+        "ans":"b"
+    },
+    {
+        "ques": 17,
+        "sec": "cs",
+        "type": "mcq",
+        "mar": 1,
+        "ans":"a"
+    },
+    {
+        "ques": 18,
+        "sec": "cs",
+        "type": "mcq",
+        "mar": 1,
+        "ans":"b"
+    },
+    {
+        "ques": 19,
+        "sec": "cs",
+        "type": "mcq",
+        "mar": 1,
+        "ans":"c"
+    },
+    {
+        "ques": 20,
+        "sec": "cs",
+        "type": "mcq",
+        "mar": 1,
+        "ans":"c"
+    },
+    {
+        "ques": 21,
+        "sec": "cs",
+        "type": "mcq",
+        "mar": 1,
+        "ans":"d"
+    },
+    {
+        "ques": 22,
+        "sec": "cs",
+        "type": "mcq",
+        "mar": 1,
+        "ans":"c"
+    },
+    {
+        "ques": 23,
+        "sec": "cs",
+        "type": "msq",
+        "mar": 1,
+        "ans":"bcd"
+    },
+    {
+        "ques": 24,
+        "sec": "cs",
+        "type": "msq",
+        "mar": 1,
+        "ans":"abd"
+    },
+    {
+        "ques": 25,
+        "sec": "cs",
+        "type": "msq",
+        "mar": 1,
+        "ans":"ab"
+    },
+    {
+        "ques": 26,
+        "sec": "cs",
+        "type": "msq",
+        "mar": 1,
+        "ans":"ad"
+    },
+    {
+        "ques": 27,
+        "sec": "cs",
+        "type": "msq",
+        "mar": 1,
+        "ans":"abc"
+    },
+    {
+        "ques": 28,
+        "sec": "cs",
+        "type": "nat",
+        "mar": 1,
+        "ans":"509-509"
+    },
+    {
+        "ques": 29,
+        "sec": "cs",
+        "type": "nat",
+        "mar": 1,
+        "ans":"5-5"
+    },
+    {
+        "ques": 30,
+        "sec": "cs",
+        "type": "nat",
+        "mar": 1,
+        "ans":"36-36"
+    },
+    {
+        "ques": 31,
+        "sec": "cs",
+        "type": "nat",
+        "mar": 1,
+        "ans":"8-8"
+    },
+    {
+        "ques": 32,
+        "sec": "cs",
+        "type": "nat",
+        "mar": 1,
+        "ans":"7-7"
+    },
+    {
+        "ques": 33,
+        "sec": "cs",
+        "type": "nat",
+        "mar": 1,
+        "ans":"0.85-0.85"
+    },
+    {
+        "ques": 34,
+        "sec": "cs",
+        "type": "nat",
+        "mar": 1,
+        "ans":"-0.5--0..5"
+    },
+    {
+        "ques": 35,
+        "sec": "cs",
+        "type": "nat",
+        "mar": 1,
+        "ans":"4-4"
+    },
+    {
+        "ques": 36,
+        "sec": "cs",
+        "type": "mcq",
+        "mar": 2,
+        "ans":"a"
+    },
+    {
+        "ques": 37,
+        "sec": "cs",
+        "type": "mcq",
+        "mar": 2,
+        "ans":"d"
+    },
+    {
+        "ques": 38,
+        "sec": "cs",
+        "type": "mcq",
+        "mar": 2,
+        "ans":"c"
+    },
+    {
+        "ques": 39,
+        "sec": "cs",
+        "type": "mcq",
+        "mar": 2,
+        "ans":"a"
+    },
+    {
+        "ques": 40,
+        "sec": "cs",
+        "type": "mcq",
+        "mar": 2,
+        "ans":"c"
+    },
+    {
+        "ques": 41,
+        "sec": "cs",
+        "type": "mcq",
+        "mar": 2,
+        "ans":"b"
+    },
+    {
+        "ques": 42,
+        "sec": "cs",
+        "type": "mcq",
+        "mar": 2,
+        "ans":"d"
+    },
+    {
+        "ques": 43,
+        "sec": "cs",
+        "type": "mcq",
+        "mar": 2,
+        "ans":"a"
+    },
+    {
+        "ques": 44,
+        "sec": "cs",
+        "type": "mcq",
+        "mar": 2,
+        "ans":"a"
+    },
+    {
+        "ques": 45,
+        "sec": "cs",
+        "type": "mcq",
+        "mar": 2,
+        "ans":"d"
+    },
+    {
+        "ques": 46,
+        "sec": "cs",
+        "type": "msq",
+        "mar": 2,
+        "ans":"abc"
+    },
+    {
+        "ques": 47,
+        "sec": "cs",
+        "type": "msq",
+        "mar": 2,
+        "ans":"abc"
+    },
+    {
+        "ques": 48,
+        "sec": "cs",
+        "type": "msq",
+        "mar": 2,
+        "ans":"bcd"
+    },
+    {
+        "ques": 49,
+        "sec": "cs",
+        "type": "msq",
+        "mar": 2,
+        "ans":"abc"
+    },
+    {
+        "ques": 50,
+        "sec": "cs",
+        "type": "msq",
+        "mar": 2,
+        "ans":"abc"
+    },
+    {
+        "ques": 51,
+        "sec": "cs",
+        "type": "msq",
+        "mar": 2,
+        "ans":"abc"
+    },
+    {
+        "ques": 52,
+        "sec": "cs",
+        "type": "msq",
+        "mar": 2,
+        "ans":"a"
+    },
+    {
+        "ques": 53,
+        "sec": "cs",
+        "type": "msq",
+        "mar": 2,
+        "ans":"acd"
+    },
+    {
+        "ques": 54,
+        "sec": "cs",
+        "type": "msq",
+        "mar": 2,
+        "ans":"abd"
+    },
+    {
+        "ques": 55,
+        "sec": "cs",
+        "type": "msq",
+        "mar": 2,
+        "ans":"bd"
+    },
+    {
+        "ques": 56,
+        "sec": "cs",
+        "type": "nat",
+        "mar": 2,
+        "ans":"2-2"
+    },
+    {
+        "ques": 57,
+        "sec": "cs",
+        "type": "nat",
+        "mar": 2,
+        "ans":"0.5-0.5"
+    },
+    {
+        "ques": 58,
+        "sec": "cs",
+        "type": "nat",
+        "mar": 2,
+        "ans":"24-24"
+    },
+    {
+        "ques": 59,
+        "sec": "cs",
+        "type": "nat",
+        "mar": 2,
+        "ans":"7.07-7.09"
+    },
+    {
+        "ques": 60,
+        "sec": "cs",
+        "type": "nat",
+        "mar": 2,
+        "ans":"33-33"
+    },
+    {
+        "ques": 61,
+        "sec": "cs",
+        "type": "nat",
+        "mar": 2,
+        "ans":"1.42-1.45"
+    },
+    {
+        "ques": 62,
+        "sec": "cs",
+        "type": "nat",
+        "mar": 2,
+        "ans":"0-0"
+    },
+    {
+        "ques": 63,
+        "sec": "cs",
+        "type": "nat",
+        "mar": 2,
+        "ans":"153-153"
+    },
+    {
+        "ques": 64,
+        "sec": "cs",
+        "type": "nat",
+        "mar": 2,
+        "ans":"0.6-0.6"
+    },
+    {
+        "ques": 65,
+        "sec": "cs",
+        "type": "nat",
+        "mar": 2,
+        "ans":"80-80"
+    }
+]
