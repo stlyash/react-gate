@@ -12,6 +12,13 @@ import InstructionsFirst from './InstructionsFirst.js'
 const Exam = props => {
     const initialCountdown = 180 * 60; // 180 minutes converted to seconds
     const [countdown, setCountdown] = useState(initialCountdown);
+    
+    const [qdata, setData] = useState(qj);
+    const [qindex, setqindex] = useState(0);
+    const [gacolor, setgacolor] = useState('#4E85C5');
+    const [cscolor, setcscolor] = useState('white');
+
+    const [qimage, setqimage] = useState(require('./assets/2022/cs/cs_question_2022--'+(qdata?.[qindex]?.ques || 'Unknown').toString()+'.png'));
   
     useEffect(() => {
       // Exit the effect if countdown reaches zero
@@ -37,23 +44,44 @@ const Exam = props => {
       return `${formattedMinutes}:${formattedSeconds}`;
     };
 
-    const [qdata, setData] = useState(qj);
-    const [qindex, setqindex] = useState(0);
+    function setcls(){
+      if(qindex < 9){
+        setgacolor('#4E85C5');
+        setcscolor('white')
+      }
+      else{
+        setcscolor('#4E85C5');
+        setgacolor('white')
+      }
+    }
 
     function next(){
       if(qindex < 64){
-        let a = qindex+1;
-      setqindex(a);
+        setqimage("");
+      setqindex(qindex+1);
+      setqimage(require('./assets/2022/cs/cs_question_2022--'+(qdata?.[qindex]?.ques + 1 || 'Unknown').toString()+'.png'))
     }
+    setcls();
     }
     function goga(){
-      if(qindex > 9)
+      if(qindex > 9){
+        setqimage("");
         setqindex(0);
-    }
+        setqimage(require('./assets/2022/cs/cs_question_2022--'+(qdata?.[0]?.ques || 'Unknown').toString()+'.png'))
+      }
+      setgacolor('#4E85C5');
+        setcscolor('white')
+      }
     function gocs(){
-      if(qindex <= 9)
+      if(qindex <= 9){
+        setqimage("");
         setqindex(10);
+        setqimage(require('./assets/2022/cs/cs_question_2022--'+(qdata?.[10]?.ques || 'Unknown').toString()+'.png'))
     }
+
+    setcscolor('#4E85C5');
+        setgacolor('white')
+      }
 
   return (
     <div className='p-0 m-0'>
@@ -111,16 +139,16 @@ const Exam = props => {
               </div>
             </div>
             
-        <div className='exam-body'>
-          <div className='exam-main'>
-            <div className='exam-calculator row pt-2 m-0'>
-              <div className='col-6 p-0'>
+        <div className='exam-body row p-0 m-0'>
+          <div className='exam-main col-9'>
+            <div className='exam-calculator row'>
+              <div className='col-6 p-0 m-0'>
                 <div className='indiv calc-l-arrow'>&#x25C0;</div>
                 <div className='indiv pt-1'>
-                  <button>CS Computer Science... <img className='calc-info' src={infoIcon} alt='info icon' />
+                  <button className='firstib'>CS Computer Science... <img className='calc-info' src={infoIcon} alt='info icon' />
                   </button></div>
               </div>
-              <div className='col-6 calcp text-end'>
+              <div className='col-6 calcp text-end p-0 m-0'>
                 <div className='indiv calc-r-arrow'>&#x25B6;</div>
                 <div className='indiv'>
                   <button style={{border:'none'}} data-bs-toggle="modal" data-bs-target="#calcmodal"><img style={{height:'0.65cm'}} src={calc} alt='calculator' /></button>
@@ -131,11 +159,11 @@ const Exam = props => {
               <div className='indiv secsec col-6'>Sections</div>
               <div className='indiv timl secsec col-6 text-end' style={{paddingRight:'0.65cm'}}>Time Left: {formatTime(countdown)}</div>
             </div>
-            <div className='exam-section row pt-1'>
+            <div className='exam-section row'>
               <div className='col-10'>
                 <div className='indiv calc-l-arrow'>&#x25C0;</div>
-                <div className='indiv'><button onClick={goga} className='m-0'>General Aptitude <img className='calc-info' src={infoIcon} alt='info icon' /></button></div>
-                <div className='indiv'><button onClick={gocs} className='m-0'>CS Computer Science... <img className='calc-info' src={infoIcon} alt='info icon' /></button></div>
+                <button onClick={goga} style={{backgroundColor:gacolor,color:cscolor}} className='gogab'>General Aptitude <img className='calc-info' src={infoIcon} alt='info icon' /></button>
+                <button onClick={gocs} style={{backgroundColor:cscolor,color:gacolor}} className='gocsb'>CS Computer Science... <img className='calc-info' src={infoIcon} alt='info icon' /></button>
               </div>
               <div className='col-2 text-end'>
                 <div className='indiv calc-r-arrow2'>&#x25B6;</div>
@@ -153,11 +181,11 @@ const Exam = props => {
             
             </div>
             <div className='exam-question'>
-              <div className='indiv'>Question No. {(qdata?.[qindex]?.ques || 'Unknown')}</div>
+              <div className='indiv quesno'>Question No. {(qdata?.[qindex]?.ques || 'Unknown')}</div>
             </div>
             <div className='textncontrol'>
             <div className='exam-text'>
-              <img style={{width:'90%',maxWidth:'10in'}} src={require('./assets/2022/cs/cs_question_2022--'+(qdata?.[qindex]?.ques || 'Unknown').toString()+'.png')} />
+              <img style={{width:'90%',maxWidth:'10in'}} src={qimage} alt='question'/>
             </div>
             <div className='exam-control'>
               <button onClick={next}>Mark for Review & Next</button>
@@ -166,9 +194,11 @@ const Exam = props => {
             </div>
             </div>
           </div>
-          <div className='exam-right'>
-            <img style={{width:"10cm",heigth:"10cm"}} src={placeholder} />
-            <div className='indiv'>Student Name</div>
+          <div className='exam-right col-3 m-0 p-0'>
+            <img className='exam-placeholder' src={placeholder} alt='student' />
+            <div style={{backgroundColor:'pink'}} className='indiv exam-sname'>Student Name</div>
+            <div className='status-panel'></div>
+            <div className='submit-button'></div>
           </div>
         </div>
 
