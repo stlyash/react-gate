@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import GateBanner from './GateBanner.js'
+import InputMethod from './InputMethod.js'
 import placeholder from './assets/placeholder.jpg'
 import question from './assets/questionPaper.png'
 import infoIcon from './assets/infoButton.png'
@@ -57,15 +58,24 @@ const Exam = props => {
 
     function next(){
       if(qindex < 64){
-        setqimage("");
+        setqimage(require('./assets/2022/cs/cs_question_2022--'+(qdata?.[qindex]?.ques + 1 || 'Unknown').toString()+'.png'))
       setqindex(qindex+1);
-      setqimage(require('./assets/2022/cs/cs_question_2022--'+(qdata?.[qindex]?.ques + 1 || 'Unknown').toString()+'.png'))
+      
     }
     setcls();
     }
+
+    
+    function previous(){
+      if(qindex >0){
+        setqimage(require('./assets/2022/cs/cs_question_2022--'+(qdata?.[qindex]?.ques - 1 || 'Unknown').toString()+'.png'))
+      setqindex(qindex-1);
+    }
+    setcls();
+    }
+
     function goga(){
       if(qindex > 9){
-        setqimage("");
         setqindex(0);
         setqimage(require('./assets/2022/cs/cs_question_2022--'+(qdata?.[0]?.ques || 'Unknown').toString()+'.png'))
       }
@@ -74,7 +84,6 @@ const Exam = props => {
       }
     function gocs(){
       if(qindex <= 9){
-        setqimage("");
         setqindex(10);
         setqimage(require('./assets/2022/cs/cs_question_2022--'+(qdata?.[10]?.ques || 'Unknown').toString()+'.png'))
     }
@@ -97,43 +106,43 @@ const Exam = props => {
                     View Instructions</div>
             </div>
         </div>
-        <div class="modal fade" id="staticBackdrop0" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-scrollable modal-lg">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h2 class="modal-title fs-5" id="staticBackdropLabel">Question Paper</h2>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div className="modal fade" id="staticBackdrop0" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div className="modal-dialog modal-lg">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h2 className="modal-title fs-5" id="staticBackdropLabel">Question Paper</h2>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
-                  <div class="modal-body">
-                  <iframe src="https://drive.google.com/file/d/17nmrLNezouGzFGNr3ddjCmHU_1AgfXan/preview" width="100%" height="480rem" allow="autoplay"></iframe>
+                  <div className="modal-body">
+                  <iframe title="question Paper" src="https://drive.google.com/file/d/17nmrLNezouGzFGNr3ddjCmHU_1AgfXan/preview" width="100%" height="480rem" allow="autoplay"></iframe>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-scrollable modal-lg">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h2 class="modal-title fs-5" id="staticBackdropLabel">Instructions</h2>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div className="modal-dialog modal-lg">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h2 className="modal-title fs-5" id="staticBackdropLabel">Instructions</h2>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
-                  <div class="modal-body">
+                  <div className="modal-body">
                   <InstructionsFirst pg = {1}/>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="modal fade" id="calcmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-              <div class="modal-dialog draggable">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h2 class="modal-title fs-5" id="staticBackdropLabel">Calculator</h2>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div className="modal fade" id="calcmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div className="modal-dialog draggable">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h2 className="modal-title fs-5" id="staticBackdropLabel">Calculator</h2>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
-                  <div class="modal-body">
-                  <iframe src="https://www.tcsion.com/OnlineAssessment/ScientificCalculator/Calculator.html" width="101%" height="350rem"></iframe>
+                  <div className="modal-body">
+                  <iframe title="calculator" src="https://www.tcsion.com/OnlineAssessment/ScientificCalculator/Calculator.html" width="101%" height="350rem"></iframe>
                   </div>
                 </div>
               </div>
@@ -159,7 +168,7 @@ const Exam = props => {
               <div className='indiv secsec col-6'>Sections</div>
               <div className='indiv timl secsec col-6 text-end' style={{paddingRight:'0.65cm'}}>Time Left: {formatTime(countdown)}</div>
             </div>
-            <div className='exam-section row'>
+            <div className='exam-section row p-0 m-0'>
               <div className='col-10'>
                 <div className='indiv calc-l-arrow'>&#x25C0;</div>
                 <button onClick={goga} style={{backgroundColor:gacolor,color:cscolor}} className='gogab'>General Aptitude <img className='calc-info' src={infoIcon} alt='info icon' /></button>
@@ -183,20 +192,32 @@ const Exam = props => {
             <div className='exam-question'>
               <div className='indiv quesno'>Question No. {(qdata?.[qindex]?.ques || 'Unknown')}</div>
             </div>
+
+
             <div className='textncontrol'>
             <div className='exam-text'>
-              <img style={{width:'90%',maxWidth:'10in'}} src={qimage} alt='question'/>
+              <img style={{width:'90%',maxWidth:'30cm'}} src={qimage} alt='question'/>
+              <InputMethod typ={qdata?.[qindex].type} />
             </div>
-            <div className='exam-control'>
-              <button onClick={next}>Mark for Review & Next</button>
-              <button>Clear Response</button>
-              <button onClick={next}>Save & Next</button>
+
+
+            <div className='exam-control row'>
+              <div className='col-6'>
+                <button onClick={next} className='ctlbtn mfr'>Mark for Review & Next</button>
+                <button className='ctlbtn cr'>Clear Response</button>
+              </div>
+              <div className='col-6 text-end'>
+                <button  className='ctlbtn pr' onClick={previous} >Previous</button>
+                <button  className='ctlbtn sv' onClick={next}>Save & Next</button>
+              </div>
+              
+              
             </div>
             </div>
           </div>
           <div className='exam-right col-3 m-0 p-0'>
             <img className='exam-placeholder' src={placeholder} alt='student' />
-            <div style={{backgroundColor:'pink'}} className='indiv exam-sname'>Student Name</div>
+            <div className='indiv exam-sname'>Student Name</div>
             <div className='status-panel'></div>
             <div className='submit-button'></div>
           </div>

@@ -62,7 +62,7 @@ const LoginPage = props => {
 
                     <select class="form-select form-select-sm">
                         <option selected>-Year-------This option will not be in GATE</option>
-                        <option value="1">2023</option>
+                        <option value="1">2022</option>
                     </select>
 
                     <Link to="/instructions"><button className='m-3 btn btn-primary sign-btn'>Sign In</button></Link>

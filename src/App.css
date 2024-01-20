@@ -68,6 +68,10 @@ input{
   margin:0;
   background-color: rgb(225, 225, 225);
 }
+.modal-backdrop{
+  /* Set the background color to transparent */
+  background-color: rgba(0, 0, 0, 0) !important;
+}
 
 
 .instruction-body{
@@ -176,6 +180,43 @@ li{
 .subanner-heading{
   color:yellow;
 }
+.inputbut{
+  border: 1px black solid;
+  border-radius:0.2cm;
+  margin-left:0.1cm;
+  margin-right:0.1cm;
+  margin-top:0.1cm;
+  height:2rem;
+  transition: transform 0.1s ease-in-out;
+  background-color: rgb(195, 194, 194);
+}
+.inputbut:hover{
+  background-color: rgb(174, 172, 172);
+}
+.inputbut:active{
+    transform: translateY(0.05cm); /* Adjust the value based on how far you want the button to move */
+}
+.norinp{
+  width: 1cm;
+  background-color: white;
+}
+.norinp:hover{
+  background-color: rgb(233, 230, 230);
+}
+.option-text {
+  display: flex;
+  align-items: center;
+ 
+}
+.option-text input{
+  margin-right:0.2cm;
+}
+.nattxtbox{
+  margin:0.1cm;
+  border-radius: 0.2cm;
+  border: 1px solid black;
+}
+
 .subanner-question{
   display:'inline';
   color:white;
@@ -245,7 +286,6 @@ li{
 }
 .exam-section{
   height:1.1cm;
-  padding-left:0.2cm;
   padding-right:0.35cm;
 }
 .exam-type{
@@ -265,12 +305,35 @@ li{
   padding-left:0.2cm;
   border-top:1px solid rgb(184, 183, 183);
 }
+.ctlbtn{
+  height:1.2cm;
+  border:solid 1px rgb(184, 183, 183);
+  margin-top:0.2cm;
+  margin-right:0.2cm;
+  background-color: #ffffff;
+  font-size: 0.95rem;
+  padding-left:0.5cm;
+  padding-right:0.5cm;
+}
+.mfr:hover,.cr:hover,.pr:hover{
+ background-color: #0C7CD5;
+ color:white;
+ border:solid 1px black;
+}
+.sv{
+  color:white;
+  background-color: #0C7CD5;
+}
+.sv:hover{
+  border:solid 1px black;
+}
 .firstib{
   border:none;
   background-color: #38A9EB;
   border-radius: 0.1cm;
   padding: 0.1cm 0.1cm 0.15cm 0.15cm;
   color:white;
+  
 }
 .gogab, .gocsb{
   border:none;
