@@ -363,6 +363,9 @@ li{
   height:calc(100vh - 7cm);
   width: 100%;
   border:solid black 2px;
+  overflow-y:scroll;
+  overflow-x:hidden;
+
 }
 .submit-button{
   height:2cm;
@@ -386,4 +389,68 @@ li{
 .secsec{
   font-size:0.85rem;
   font-weight:700;
+}
+
+.status-count-img{
+  width:0.9cm;
+  height:0.9cm;
+  float:left;
+  margin-right:0.2cm;
+}
+
+.status-stat{
+  font-size:0.8rem;
+}
+.status-stat .row{
+  margin: 0.1cm 0 0.1cm 0;
+}
+.status-text{
+  display: flex;
+  height:95%;
+  flex-direction: column;
+  align-items: flex-start; /* Horizontal alignment - left */
+  justify-content: center; /* Vertical alignment - center */
+}
+.stat-count{
+  position:absolute;
+  height:0.9cm;
+  width:0.9cm;
+  display: grid;
+  place-items:center;
+  font-weight: 630;
+}
+.status-section{
+  width:100%;
+  font-size:0.9rem;
+  font-weight:500;
+  color:white;
+  background-color: #38aae9;
+  padding: 0.1cm 0 0.1cm 0.4cm;
+}
+.ques-status{
+  border:none;
+}
+
+/* Individual Question Status images */
+.ques-status1{
+  border:none;
+  display: inline;
+  margin-right:0.4cm;
+  margin-left:0.4cm;
+  margin-top:0.2cm;
+  margin-bottom:0.2cm;
+}
+.stat-count1{
+  position:absolute;
+  height:0.9cm;
+  width:0.9cm;
+  display: grid;
+  place-items:center;
+  font-weight: 630;
+}
+.status-count-img1{
+  width:1cm;
+  height:1cm;
+  float:left;
+  margin-right:0.2cm;
 }

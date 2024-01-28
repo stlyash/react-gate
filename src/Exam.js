@@ -9,18 +9,26 @@ import calc from './assets/calct7.png'
 import { useEffect, useState } from 'react'
 import qj from './assets/2022/cs/cs2022details.json'
 import InstructionsFirst from './InstructionsFirst.js'
+import st1 from './assets/status/st1.jpg'
+import st2 from './assets/status/st2.jpg'
+import st3 from './assets/status/st3.jpg'
+import st4 from './assets/status/st4.jpg'
+import st5 from './assets/status/st5.jpg'
 
 const Exam = props => {
     const initialCountdown = 180 * 60; // 180 minutes converted to seconds
     const [countdown, setCountdown] = useState(initialCountdown);
     
-    const [qdata, setData] = useState(qj);
+    const [qdata] = useState(qj);
     const [qindex, setqindex] = useState(0);
     const [gacolor, setgacolor] = useState('#4E85C5');
     const [cscolor, setcscolor] = useState('white');
 
     const [qimage, setqimage] = useState(require('./assets/2022/cs/cs_question_2022--'+(qdata?.[qindex]?.ques || 'Unknown').toString()+'.png'));
   
+    const [gaqstatus, setGaqstatus] = useState([1,2,3,4,5,1,1,1,1,1]);
+    const [csqstatus, setCsqstatus] = useState([1,2,3,4,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]);
+    
     useEffect(() => {
       // Exit the effect if countdown reaches zero
       if (countdown <= 0) {
@@ -90,6 +98,36 @@ const Exam = props => {
 
     setcscolor('#4E85C5');
         setgacolor('white')
+      }
+
+      const gaQuestionStates = () => {
+        return (
+          <>
+            {gaqstatus.map((i) => (
+              <div className='ques-status1 col-1' key={`status${i}`}>
+                  <div>
+                    <div className='stat-count1' style={{ color: 'white' }}>55</div>
+                    <img className='status-count-img1' src={require(`./assets/status/st${i}.jpg`)} alt={`status${i}`} />
+                  </div>
+              </div>
+            ))}
+          </>
+        );
+      }
+
+      const csQuestionStates = () => {
+        return (
+          <>
+            {csqstatus.map((i) => (
+              <div className='ques-status1 col-1' key={`status${i}`}>
+                  <div>
+                    <div className='stat-count1' style={{ color: 'white' }}>55</div>
+                    <img className='status-count-img1' src={require(`./assets/status/st${i}.jpg`)} alt={`status${i}`} />
+                  </div>
+              </div>
+            ))}
+          </>
+        );
       }
 
   return (
@@ -218,7 +256,56 @@ const Exam = props => {
           <div className='exam-right col-3 m-0 p-0'>
             <img className='exam-placeholder' src={placeholder} alt='student' />
             <div className='indiv exam-sname'>Student Name</div>
-            <div className='status-panel'></div>
+            <div className='status-panel'>
+              <div className='stats'>
+                <div className='container status-stat'>
+                  <div className='row'>
+                    <div className='col-6'>
+                      <img className='status-count-img' src={st5} alt='status1' />
+                      <div className='stat-count' style={{color:'white'}}>1</div>
+                      <div className='status-text'>Answered</div>
+                    </div>
+                    <div className='col-6'>
+                    <div className='stat-count' style={{color:'white'}}>1</div>
+                    <img className='status-count-img' src={st2} alt='status2' />
+                    <div className='status-text'>Not Answered</div>
+                    </div>
+                  </div>
+                  <div className='row'>
+                    <div className='col-6'>
+                    <div className='stat-count'>1</div>
+                    <img className='status-count-img' src={st1} alt='status3' />
+                    <div className='status-text'>Not Visited</div>
+                    </div>
+                    <div className='col-6'>
+                    <div className='stat-count' style={{color:'white'}}>1</div>
+                    <img className='status-count-img' src={st3} alt='status4' />
+                    <div className='status-text'>Marked for Review</div>
+                    </div>
+                  </div>
+                  <div className='row'>
+                    <div className='col-12'>
+                    <div className='stat-count' style={{color:'white'}}>55</div>
+                    <img className='status-count-img' src={st4} alt='status5' />
+                      <div className='status-text'>Answered & Marked for Review (will also be evaluated)</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className='status-section'>
+                General Aptitude
+              </div>
+              <div className='row'>
+              {gaQuestionStates()}</div>
+
+              <div className='status-section'>
+                Computer Science
+              </div>
+
+              <div className='row'>
+              {csQuestionStates()}</div>
+
+            </div>
             <div className='submit-button'></div>
           </div>
         </div>
