@@ -61,6 +61,6 @@ const InputMethod = props => {
     }
 }
 
-InputMethod.propTypes = {String}
+InputMethod.propTypes = {typ: PropTypes.string}
 
 export default InputMethod

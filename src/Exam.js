@@ -27,7 +27,7 @@ const Exam = props => {
     const [qimage, setqimage] = useState(require('./assets/2022/cs/cs_question_2022--'+(qdata?.[qindex]?.ques || 'Unknown').toString()+'.png'));
   
     const [gaqstatus, setGaqstatus] = useState([1,2,3,4,5,1,1,1,1,1]);
-    const [csqstatus, setCsqstatus] = useState([1,2,3,4,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]);
+    const [csqstatus, setCsqstatus] = useState([1,2,4,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]);
     
     useEffect(() => {
       // Exit the effect if countdown reaches zero
@@ -53,7 +53,7 @@ const Exam = props => {
       return `${formattedMinutes}:${formattedSeconds}`;
     };
 
-    function setcls(){
+    useEffect(() => { 
       if(qindex < 9){
         setgacolor('#4E85C5');
         setcscolor('white')
@@ -62,24 +62,21 @@ const Exam = props => {
         setcscolor('#4E85C5');
         setgacolor('white')
       }
-    }
+    }, [qindex]); 
 
     function next(){
       if(qindex < 64){
         setqimage(require('./assets/2022/cs/cs_question_2022--'+(qdata?.[qindex]?.ques + 1 || 'Unknown').toString()+'.png'))
-      setqindex(qindex+1);
-      
-    }
-    setcls();
+        setqindex(qindex+1);
+      }
     }
 
     
     function previous(){
       if(qindex >0){
         setqimage(require('./assets/2022/cs/cs_question_2022--'+(qdata?.[qindex]?.ques - 1 || 'Unknown').toString()+'.png'))
-      setqindex(qindex-1);
+        setqindex(qindex-1);
     }
-    setcls();
     }
 
     function goga(){
@@ -87,29 +84,28 @@ const Exam = props => {
         setqindex(0);
         setqimage(require('./assets/2022/cs/cs_question_2022--'+(qdata?.[0]?.ques || 'Unknown').toString()+'.png'))
       }
-      setgacolor('#4E85C5');
-        setcscolor('white')
       }
     function gocs(){
       if(qindex <= 9){
         setqindex(10);
         setqimage(require('./assets/2022/cs/cs_question_2022--'+(qdata?.[10]?.ques || 'Unknown').toString()+'.png'))
     }
-
-    setcscolor('#4E85C5');
-        setgacolor('white')
+      }
+      function gotoq(i){
+        console.log("passed",i)
+        setqimage(require('./assets/2022/cs/cs_question_2022--'+(qdata?.[i]?.ques || 'Unknown').toString()+'.png'))
+        setqindex(i);
       }
 
       const gaQuestionStates = () => {
         return (
           <>
-            {gaqstatus.map((i) => (
-              <div className='ques-status1 col-1' key={`status${i}`}>
-                  <div>
-                    <div className='stat-count1' style={{ color: 'white' }}>55</div>
-                    <img className='status-count-img1' src={require(`./assets/status/st${i}.jpg`)} alt={`status${i}`} />
-                  </div>
-              </div>
+            {gaqstatus.map((i,ind) => (
+              <div className="containertry listed" key={`status${ind}`}>
+                <div className='imgstat' onClick={() => gotoq(ind)}>
+              <img className='imgtry imgstat'  src={require(`./assets/status/st${i}.jpg`)} alt={`status${i}`}/>
+              <div className="centeredtry censtat" style={i===1?{color:'black'}:{color:'white'}}>{ind+1}</div>
+              </div></div>
             ))}
           </>
         );
@@ -118,13 +114,12 @@ const Exam = props => {
       const csQuestionStates = () => {
         return (
           <>
-            {csqstatus.map((i) => (
-              <div className='ques-status1 col-1' key={`status${i}`}>
-                  <div>
-                    <div className='stat-count1' style={{ color: 'white' }}>55</div>
-                    <img className='status-count-img1' src={require(`./assets/status/st${i}.jpg`)} alt={`status${i}`} />
-                  </div>
-              </div>
+            {csqstatus.map((i,ind) => (
+            <div className="containertry listed" key={`status${ind}`}>
+              <div className='imgstat' onClick={() => gotoq(ind+10)}>
+              <img className='imgtry imgstat'  src={require(`./assets/status/st${i}.jpg`)} alt={`status${i}`}/>
+              <div className="centeredtry censtat" style={i===1?{color:'black'}:{color:'white'}}>{ind+11}</div>
+            </div> </div>
             ))}
           </>
         );
@@ -260,33 +255,44 @@ const Exam = props => {
               <div className='stats'>
                 <div className='container status-stat'>
                   <div className='row'>
-                    <div className='col-6'>
-                      <img className='status-count-img' src={st5} alt='status1' />
-                      <div className='stat-count' style={{color:'white'}}>1</div>
-                      <div className='status-text'>Answered</div>
+                    <div className='grid-cent'>
+                        <div className="containertry">
+                          <img className='imgtry' src={st5} alt="Snow" style={{width:'100%'}} />
+                          <div className="centeredtry" style={{color:'white'}}>35</div>
+                        </div>  
+                          <div className="statex" style={{color:'black'}}>Answered</div>
+
                     </div>
-                    <div className='col-6'>
-                    <div className='stat-count' style={{color:'white'}}>1</div>
-                    <img className='status-count-img' src={st2} alt='status2' />
+                    <div className='grid-cent'>
+                    <div className="containertry">
+                      <img className='imgtry' src={st2} alt="Snow" style={{width:'100%'}} />
+                      <div className="centeredtry" style={{color:'white'}}>45</div>
+                    </div>
                     <div className='status-text'>Not Answered</div>
                     </div>
                   </div>
                   <div className='row'>
-                    <div className='col-6'>
-                    <div className='stat-count'>1</div>
-                    <img className='status-count-img' src={st1} alt='status3' />
+                    <div className='grid-cent'>
+                    <div className="containertry">
+                      <img className='imgtry' src={st1} alt="Snow" style={{width:'100%'}} />
+                      <div className="centeredtry" style={{color:'black'}}>36</div>
+                    </div>                    
                     <div className='status-text'>Not Visited</div>
                     </div>
-                    <div className='col-6'>
-                    <div className='stat-count' style={{color:'white'}}>1</div>
-                    <img className='status-count-img' src={st3} alt='status4' />
+                    <div className='grid-cent'>
+                    <div className="containertry">
+                      <img className='imgtry' src={st3} alt="Snow" style={{width:'100%'}} />
+                      <div className="centeredtry" style={{color:'white'}}>14</div>
+                    </div>                    
                     <div className='status-text'>Marked for Review</div>
                     </div>
                   </div>
                   <div className='row'>
-                    <div className='col-12'>
-                    <div className='stat-count' style={{color:'white'}}>55</div>
-                    <img className='status-count-img' src={st4} alt='status5' />
+                    <div className='col-12 grid-cent' style={{width:'96%'}}>
+                      <div className="containertry">
+                      <img className='imgtry' src={st4} alt="Snow" style={{width:'100%'}} />
+                      <div className="centeredtry" style={{color:'white'}}>45</div>
+                    </div>                      
                       <div className='status-text'>Answered & Marked for Review (will also be evaluated)</div>
                     </div>
                   </div>

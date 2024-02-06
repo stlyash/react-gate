@@ -365,6 +365,7 @@ li{
   border:solid black 2px;
   overflow-y:scroll;
   overflow-x:hidden;
+  padding-right:0.2cm;
 
 }
 .submit-button{
@@ -391,12 +392,7 @@ li{
   font-weight:700;
 }
 
-.status-count-img{
-  width:0.9cm;
-  height:0.9cm;
-  float:left;
-  margin-right:0.2cm;
-}
+
 
 .status-stat{
   font-size:0.8rem;
@@ -404,23 +400,77 @@ li{
 .status-stat .row{
   margin: 0.1cm 0 0.1cm 0;
 }
-.status-text{
-  display: flex;
-  height:95%;
-  flex-direction: column;
-  align-items: flex-start; /* Horizontal alignment - left */
-  justify-content: center; /* Vertical alignment - center */
-}
-.stat-count{
-  position:absolute;
-  height:0.9cm;
-  width:0.9cm;
+.grid-cent{
   display: grid;
   place-items:center;
-  font-weight: 630;
+  border:solid 1px black;
+  margin:0.1cm;
+  border-radius:0.2cm;
+  width: 47%;
+  padding-top:0.1cm;
+  padding-bottom:0.1cm;
 }
+
+.img-stat{
+  position: relative;
+  text-align: center;
+  background-color:yellow;
+}
+.stat-count{
+  height:0.9cm;
+  width:0.9cm;
+  font-weight: 630;
+  background-color:pink;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.status-count-img{
+  width:0.9cm;
+  height:0.9cm;
+  margin-right:0.2cm;
+  background-color:magenta;
+}    
+.nowrap{
+  white-space: nowrap;
+}
+
+.imgtry {
+  width:1.1cm;
+  height:1cm;
+}
+.containertry {
+  position: relative;
+  text-align: center;
+  width:1cm;
+  height:1cm;
+  color: white;
+}
+.centeredtry {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  width:0.9cm;
+  height:0.9cm;
+  transform: translate(-50%, -50%);
+}
+.censtat {
+  left: 88%;
+}
+.listed{
+  margin-left:0.6cm;
+  margin-right:0.2cm;
+  margin-bottom:0.2cm;
+  margin-top:0.2cm;
+}
+.imgstat{
+  cursor: pointer;
+}
+
+
 .status-section{
-  width:100%;
+  width:110%;
   font-size:0.9rem;
   font-weight:500;
   color:white;
